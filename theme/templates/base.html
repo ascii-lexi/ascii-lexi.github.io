@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+<meta name="description" content="{% block description %}{{ SITE_TAGLINE }}{% endblock %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<button class="nav-toggle" id="navToggle">&gt; {{ MENU_LABEL }}<span class="cursor">_</span></button>
+<div class="shell">
+  <nav class="sidebar" id="sidebar">
+    <div class="site-id">
+      <a href="index.html">
+        <div class="site-title">&gt;{{ SITENAME }}<span class="cursor">_</span> </div>
+        <div class="site-tagline">{{ SITE_TAGLINE }}</div>
+      </a>
+    </div>
+
+    {% block sidebar_nav %}{% endblock %}
+
+    {% if SITE_LINKS %}
+    <p class="nav-label">Links</p>
+    <ul class="tree">
+      {% for link in SITE_LINKS %}<li><a href="{{ link.href }}">{{ link.label }}</a></li>{% endfor %}
+    </ul>
+    {% endif %}
+    <div class="sidebar-footer">{{ SITENAME }}</div>
+  </nav>
+
+  <main class="content">
+    <div class="content-inner">
+      {% block content %}{% endblock %}
+    </div>
+  </main>
+</div>
+
+<script src="static/nav.js"></script>
+{% block extra_scripts %}{% endblock %}
+</body>
+</html>

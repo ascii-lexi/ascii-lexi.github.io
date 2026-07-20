@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block sidebar_nav %}
+<p class="nav-label">Posts</p>
+<ul class="tree">
+  {% for article in articles %}<li><a href="{{ article.url }}">{{ article.title }}</a></li>{% endfor %}
+</ul>
+{% endblock %}
+
+{% block content %}
+<ul class="post-list">
+  {% for article in articles %}
+  <li>
+    <h2 class="post-entry-title"><a href="{{ article.url }}">{{ article.title }}</a></h2>
+    <div class="post-entry-meta">{{ article.date.strftime('%b %-d, %Y') }} &middot; {{ article.content|read_time }}</div>
+    <div class="post-entry-excerpt">{{ article.summary }}</div>
+  </li>
+  {% else %}
+  <li>No posts yet — add one to content/</li>
+  {% endfor %}
+</ul>
+{% endblock %}

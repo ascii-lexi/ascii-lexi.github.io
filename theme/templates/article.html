@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }} — {{ SITENAME }}{% endblock %}
+{% block description %}{{ article.summary|striptags }}{% endblock %}
+
+{% block sidebar_nav %}
+<p class="nav-label">On this page</p>
+<ul class="tree" id="toc">
+  {% if article.toc_tree %}{{ article.toc_tree|safe }}{% else %}<li style="opacity:.5; list-style:none; padding-left:0;">(no sections)</li>{% endif %}
+</ul>
+{% endblock %}
+
+{% block content %}
+<div class="post-meta">{{ article.date.strftime('%b %-d, %Y') }}<span class="sep">/</span>{{ article.content|read_time }}</div>
+<h1 class="post-title">{{ article.title }}</h1>
+<article class="post-body">
+{{ article.content }}
+</article>
+<a class="back-link" href="index.html">&larr; all posts</a>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="static/scrollspy.js"></script>
+{% endblock %}
