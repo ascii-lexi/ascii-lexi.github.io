@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restoring Exported iCloud Metadata — lexi@blog</title>
+<meta name="description" content="Oh Apple, this just won't do.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<button class="nav-toggle" id="navToggle">&gt; cd ~<span class="cursor">_</span></button>
+<div class="shell">
+  <nav class="sidebar" id="sidebar">
+    <div class="site-id">
+      <a href="index.html">
+        <div class="site-title">&gt;lexi@blog<span class="cursor">_</span> </div>
+        <div class="site-tagline">digital sovereignty, forever</div>
+      </a>
+    </div>
+
+<p class="nav-label">On this page</p>
+<ul class="tree" id="toc">
+<li><a href="#backstory">Backstory</a></li><li><a href="#solution">Solution</a></li><li><a href="#more-solutions-more-problems">More Solutions, More Problems</a></li><li><a href="#epilogue">Epilogue</a></li></ul>
+
+    <p class="nav-label">Links</p>
+    <ul class="tree">
+<li><a href="https://github.com/ascii-lexi">GitHub</a></li>    </ul>
+    <div class="sidebar-footer">lexi@blog</div>
+  </nav>
+
+  <main class="content">
+    <div class="content-inner">
+<div class="post-meta">Jul 20, 2026<span class="sep">/</span>2 min read</div>
+<h1 class="post-title">Restoring Exported iCloud Metadata</h1>
+<article class="post-body">
+<h2 id="backstory">Backstory</h2>
+<p>I am helping my mom migrate away from iCloud as she is tired of the monthly bill and how aggressively her iPhone swaps apps and photos to the cloud to save space. So, after a little research I do what most people in the position say to do (if you don't own a Mac that is, which neither of us do): request a data export from <a href="https://privacy.apple.com">privacy.apple.com</a></p>
+<p>The only issue is, once they let you download your data, you get a bunch of zip files of photos and videos which have had all of there metadata scrubbed! Gone! Kapoof! And of course, Apple, The King of User Experience gives you 1-5 .csv files in each archive containing the metadata <strong>they</strong> stripped out! Of course this makes it hard to use these images and video in other image hosting software, such as, I don't know, maybe a FOSS self hosted image hosting solution such as the wonderful <a href="https://immich.app/">Immich.</a></p>
+<h2 id="solution">Solution</h2>
+<p>So, I come across a <a href="https://github.com/zainepils/icloud-photos-export-fix">github repo</a> from <a href="https://github.com/zainepils">zainepils</a> that has a python script to do just what I am looking for using ExifTool.
+I remote in to my mom's home computer using RustDesk, configure the python requirements, and run the script.</p>
+<h2 id="more-solutions-more-problems">More Solutions, More Problems</h2>
+<p>Well, about 3 hours in on her 30,000th photo, the script throws a python error.</p>
+<pre><code>UnicodeEncodeError: 'charmap' codec can't encode character
+'\u202f' in position 106: character maps to &lt;undefined&gt;
+</code></pre>
+<p>And I am left scratching my head about why Apple would use this "<a href="https://unicodeplus.com/U+202F">narrow no-break space</a>" character inside of its meta-data, occasionally. After some looking into the error trace, it seems to occur when processing the time stamp, specifically the space between the hour:minute and AM/PM.</p>
+<p>Apple's decisions are as inscrutable as ever, so I rolled my eyes and go ahead and modify the script to replace <code>\u202f</code> and another white-space character <code>\xa0</code> with a regular space character. </p>
+<p>Run the script again, and this time it completes! I <code>rsync</code> the files to my Immich instance and done, date sorting works perfect.</p>
+<h2 id="epilogue">Epilogue</h2>
+<p>I forked the original script, added my changes, and made a pull request. I also went around Reddit and spread the good word of "The Script That Fixes iCloud Exports"</p>
+<p>My mom is happily looking through and sorting her photos on my Immich instance with the year scroll bar working perfectly.</p>
+<p>And everyone lived happily ever after.</p>
+</article>
+<a class="back-link" href="index.html">&larr; all posts</a>
+    </div>
+  </main>
+</div>
+
+<script src="static/nav.js"></script>
+<script src="static/scrollspy.js"></script>
+</body>
+</html>

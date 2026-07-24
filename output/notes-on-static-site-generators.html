@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notes on Static Site Generators — lexi@blog</title>
+<meta name="description" content="A quick comparison of Pelican, Zola, and rolling your own.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<button class="nav-toggle" id="navToggle">&gt; cd ~<span class="cursor">_</span></button>
+<div class="shell">
+  <nav class="sidebar" id="sidebar">
+    <div class="site-id">
+      <a href="index.html">
+        <div class="site-title">&gt;lexi@blog<span class="cursor">_</span> </div>
+        <div class="site-tagline">digital sovereignty, forever</div>
+      </a>
+    </div>
+
+<p class="nav-label">On this page</p>
+<ul class="tree" id="toc">
+<li><a href="#the-short-version">The short version</a></li><li><a href="#trade-offs">Trade-offs</a></li></ul>
+
+    <p class="nav-label">Links</p>
+    <ul class="tree">
+<li><a href="https://github.com/ascii-lexi">GitHub</a></li>    </ul>
+    <div class="sidebar-footer">lexi@blog</div>
+  </nav>
+
+  <main class="content">
+    <div class="content-inner">
+<div class="post-meta">Jul 19, 2026<span class="sep">/</span>1 min read</div>
+<h1 class="post-title">Notes on Static Site Generators</h1>
+<article class="post-body">
+<h2 id="the-short-version">The short version</h2>
+<p>If you already know Python, Pelican's templates will feel familiar. If you
+want a single fast binary, Zola is great. If you want full control over every
+line of HTML, write your own — it's less work than it sounds.</p>
+<h2 id="trade-offs">Trade-offs</h2>
+<blockquote>
+<p>The templating language is rarely the hard part. Getting the CSS to feel
+intentional is.</p>
+</blockquote>
+<p>That's the part this project tries to solve up front, so you only have to
+tune six variables instead of designing a theme from scratch.</p>
+</article>
+<a class="back-link" href="index.html">&larr; all posts</a>
+    </div>
+  </main>
+</div>
+
+<script src="static/nav.js"></script>
+<script src="static/scrollspy.js"></script>
+</body>
+</html>
