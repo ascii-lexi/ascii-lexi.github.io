@@ -1,5 +1,5 @@
 title: Restoring Exported iCloud Metadata
-date: 2026-07-20
+date: 2026-07-24
 summary: Oh Apple, this just won't do.	
 ## Backstory
 I am helping my mom migrate away from iCloud as she is tired of the monthly bill and how aggressively her iPhone swaps apps and photos to the cloud to save space. So, after a little research I do what most people in the position say to do (if you don't own a Mac that is, which neither of us do): request a data export from [privacy.apple.com](https://privacy.apple.com)
