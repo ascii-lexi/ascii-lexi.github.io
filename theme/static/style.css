@@ -10,6 +10,9 @@
   --accent:    #2B5D6B;   /* links, active nav, headings accent */
   --accent-hot:#B23B3B;   /* hover / active state, used sparingly */
 
+  --pre-bg:    #1C2321;   /* code block background — separate from --ink so it doesn't flip in dark mode */
+  --pre-ink:   #E8E6DE;   /* code block text */
+
   --font-display: 'IBM Plex Mono', 'SFMono-Regular', Menlo, monospace;
   --font-body:    'Source Serif 4', Georgia, 'Times New Roman', serif;
   --font-mono:    'IBM Plex Mono', 'SFMono-Regular', Menlo, monospace;
@@ -17,6 +20,22 @@
   --sidebar-w: 280px;
   --content-max: 680px;
   --radius: 3px;
+}
+
+/* =========================================================
+   DARK THEME — applied via [data-theme="dark"] on <html>
+   ========================================================= */
+[data-theme="dark"] {
+  --bg:        #181B19;
+  --surface:   #21251F;
+  --ink:       #E6E8E3;
+  --ink-soft:  #8D988F;
+  --line:      #333A34;
+  --accent:    #7FB3C3;
+  --accent-hot:#E08A6E;
+
+  --pre-bg:    #0F1210;
+  --pre-ink:   #E6E8E3;
 }
 
 /* =========================================================
@@ -32,6 +51,7 @@ body {
   font-size: 18px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 img { max-width: 100%; display: block; }
 a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
@@ -57,6 +77,7 @@ a:hover, a:focus-visible { color: var(--accent-hot); }
   top: 0;
   height: 100vh;
   overflow-y: auto;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 .site-id { margin-bottom: 2.25rem; }
 .site-id a { text-decoration: none; color: var(--ink); }
@@ -119,6 +140,28 @@ a:hover, a:focus-visible { color: var(--accent-hot); }
   border-top: 1px solid var(--line);
   padding-top: 1rem;
   margin-top: auto;
+}
+
+/* ---------- Theme toggle ---------- */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.4em 0.7em;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  color: var(--accent-hot);
+  border-color: var(--accent-hot);
 }
 
 /* mobile drawer toggle */
@@ -195,8 +238,8 @@ h1.post-title {
   border-radius: var(--radius);
 }
 .post-body pre {
-  background: var(--ink);
-  color: #E8E6DE;
+  background: var(--pre-bg);
+  color: var(--pre-ink);
   padding: 1rem 1.2rem;
   border-radius: var(--radius);
   overflow-x: auto;

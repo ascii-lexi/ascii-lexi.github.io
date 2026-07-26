@@ -7,16 +7,18 @@
 <meta name="description" content="{% block description %}{{ SITE_TAGLINE }}{% endblock %}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="static/style.css">
+<link rel="stylesheet" href="{{SITEURL}}/static/style.css">
+<script src="{{SITEURL}}/static/theme-toggle.js"></script>
+<link rel="icon" type="image/png" href="{{ SITEURL }}/static/favicon.png">
 </head>
 <body>
 <div class="scrim" id="scrim"></div>
-<button class="nav-toggle" id="navToggle">&gt; {{ MENU_LABEL }}<span class="cursor">_</span></button>
+<button class="nav-toggle" id="navToggle"><span style="color: green">&gt;</span> {{ MENU_LABEL }}<span class="cursor">_</span></button>
 <div class="shell">
   <nav class="sidebar" id="sidebar">
     <div class="site-id">
       <a href="index.html">
-        <div class="site-title">&gt;{{ SITENAME }}<span class="cursor">_</span> </div>
+        <div class="site-title"><span style="color: green">&gt;</span>{{ SITENAME }}<span class="cursor">_</span> </div>
         <div class="site-tagline">{{ SITE_TAGLINE }}</div>
       </a>
     </div>
@@ -29,7 +31,8 @@
       {% for link in SITE_LINKS %}<li><a href="{{ link.href }}">{{ link.label }}</a></li>{% endfor %}
     </ul>
     {% endif %}
-    <div class="sidebar-footer">{{ SITENAME }} <br> <a href="mailto:contact@alexmorrell.xyz">contact@alexmorrell.xyz</a> </div>
+    <div class="sidebar-footer">{{ SITENAME }} <br> <a href="mailto:contact@alexmorrell.xyz">contact@alexmorrell.xyz</a> <br>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙 Dark</button></div>
   </nav>
 
   <main class="content">
