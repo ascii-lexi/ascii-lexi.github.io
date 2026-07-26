@@ -6,6 +6,8 @@ I am helping my mom migrate away from iCloud as she is tired of the monthly bill
 
 The only issue is, once they let you download your data, you get a bunch of zip files of photos and videos which have had all of there metadata scrubbed! Gone! Kapoof! And of course, Apple, The King of User Experience gives you 1-5 .csv files in each archive containing the metadata **they** stripped out! Of course this makes it hard to use these images and video in other image hosting software, such as, I don't know, maybe a FOSS self hosted image hosting solution such as the wonderful [Immich.](https://immich.app/)
 
+The end goal of this whole operation was to allow my mom to browse all of this data, delete redundant images and generally organize it. This task would be a lot harder without intact EXIF data. Luckily, Tim Cook in his unyielding grace did give me those .csv files. So I go looking for a solution to reinsert the EXIF data from each line in the .csv into its respective file.
+
 ## Solution
 So, I come across a [github repo](https://github.com/zainepils/icloud-photos-export-fix) from [zainepils](https://github.com/zainepils) that has a python script to do just what I am looking for using ExifTool.
 I remote in to my mom's home computer using RustDesk, configure the python requirements, and run the script.
