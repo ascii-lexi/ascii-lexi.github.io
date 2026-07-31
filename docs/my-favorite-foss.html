@@ -7,36 +7,65 @@
 <meta name="description" content="It's FOSS!">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="static/style.css">
+<link rel="stylesheet" href="./static/style.css">
+<script src="./static/theme-toggle.js"></script>
+<link rel="icon" type="image/png" href="./static/favicon.png">
 </head>
 <body>
 <div class="scrim" id="scrim"></div>
-<button class="nav-toggle" id="navToggle">&gt; cd ~<span class="cursor">_</span></button>
+<button class="nav-toggle" id="navToggle"><span style="color: green">&gt;</span> cd ~<span class="cursor">_</span></button>
 <div class="shell">
   <nav class="sidebar" id="sidebar">
     <div class="site-id">
       <a href="index.html">
-        <div class="site-title">&gt;lexi@blog<span class="cursor">_</span> </div>
+        <div class="site-title"><span style="color: green">&gt;</span>lexi@blog<span class="cursor">_</span> </div>
         <div class="site-tagline">digital sovereignty, forever</div>
       </a>
     </div>
 
 <p class="nav-label">On this page</p>
 <ul class="tree" id="toc">
-<li style="opacity:.5; list-style:none; padding-left:0;">(no sections)</li></ul>
+<li><a href="#editors">Editors</a></li><li><a href="#media">Media</a></li><li><a href="#development">Development</a><ul class="tree"><li><a href="#not-foss-shameful-mention">Not FOSS shameful mention</a></li></ul></li></ul>
 
     <p class="nav-label">Links</p>
     <ul class="tree">
 <li><a href="https://github.com/ascii-lexi">GitHub</a></li>    </ul>
-    <div class="sidebar-footer">lexi@blog</div>
+    <div class="sidebar-footer">lexi@blog <br> <a href="mailto:contact@alexmorrell.xyz">contact@alexmorrell.xyz</a> <br> <br>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙 Dark</button></div>
   </nav>
 
   <main class="content">
     <div class="content-inner">
-<div class="post-meta">Jul 20, 2026<span class="sep">/</span>1 min read</div>
+<div class="post-meta">Jul 20, 2026<span class="sep">/</span>2 min read</div>
 <h1 class="post-title">My Favorite FOSS</h1>
 <article class="post-body">
-
+<p>I will be updating this page as I try new software.</p>
+<h2 id="editors">Editors</h2>
+<ul>
+<li><strong>Ghostwriter</strong> - a WYSIWYG markdown editor that I have used to write every article for this blog! Has spellcheck which is something I find incredibly useful as a dyslexic.</li>
+<li><strong>NeoVim</strong> - no explanation needed. I use it for config files mainly, not as a terminal IDE. I am not what the kids call a <em><a href="https://nvchad.com/">NVChad.</a></em></li>
+<li><strong>LibreOffice Suite</strong> - Great for editing .docx without paying the devil his due, I used it recently for making my resume a docx document so the <em>AI Joblords</em> can read it better. (btw if you have strange scaling in LibreOffice on Wayland on a 4k monitor: check out this helpful blog <a href="https://blog.aether.us/2025/10/13/libreoffice-scaling/">post</a> from CodeMonkey, a stylish blog haver).</li>
+<li><strong>Krita</strong> - Technically for digital artistry like painting, but I use it as a Photoshop replacement as it has very similar keybinds, I can mask, I can clone stamp, I can edit color curves. It is Photoshop shaped and not GIMP.</li>
+<li><strong>DaVinci Resolve</strong> - I used it a lot on Microslop Windows, but thinking of migrating away from it to KdenLive or something as it only supports a few video codecs on Linux.</li>
+</ul>
+<h2 id="media">Media</h2>
+<ul>
+<li><strong>Tambourine</strong> - aesthetically pleasing music player, but bare bones, now looking for software with playlist capability.</li>
+<li><strong>VLC</strong> - Traffic Cone.</li>
+<li><strong>Blender &amp; Godot</strong> - 3D editing and game engine when I feel like making something interactive.</li>
+<li><strong>Foliate</strong> - Epub reader, no frills but less heavy than Calibre</li>
+<li><strong>❤️ LocalSend ❤️</strong> - LAN file transfer that is perfect in every way. Solves a common issue and has good enough UX for non-technical people to use it and easily identify why it is useful.</li>
+</ul>
+<h2 id="development">Development</h2>
+<ul>
+<li><strong>TrueNAS</strong> - Technically partially FOSS, which is the part I use. Lets me get a good web UI overview of my media server which runs some development containers as well. Blog post on this server coming soon!</li>
+<li><strong>Code - OSS</strong> - FOSS VS Code. I really really really gave Kate a shot but it is painful to get simple features like debugging to work.</li>
+<li><strong>Termux</strong> - Terminal multiplexer, great for multitasking on ssh and slow operations you don't want to have to <code>ps aux | grep "long ass rsync job"</code> or search for in <code>top</code>.</li>
+</ul>
+<h3 id="not-foss-shameful-mention">Not FOSS shameful mention</h3>
+<ul>
+<li><strong>TailScale</strong> - not foss, I haven't tried Pangolin yet. It make the internet <em>feel</em> like a <a href="https://www.youtube.com/watch?v=_cZC67wXUTs">series of tubes</a>, and not 20 NAT Tables talking to each other (IPv4 be damned)</li>
+</ul>
 </article>
 <a class="back-link" href="index.html">&larr; all posts</a>
     </div>
@@ -44,6 +73,6 @@
 </div>
 
 <script src="static/nav.js"></script>
-<script src="static/scrollspy.js"></script>
+<script src="./static/scrollspy.js"></script>
 </body>
 </html>
