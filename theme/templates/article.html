@@ -4,7 +4,7 @@
 {% block description %}{{ article.summary|striptags }}{% endblock %}
 
 {% block sidebar_nav %}
-<p class="nav-label">On this page</p>
+<p class="nav-label">{{ article.title }}</p>
 <ul class="tree" id="toc">
   {% if article.toc_tree %}{{ article.toc_tree|safe }}{% else %}<li style="opacity:.5; list-style:none; padding-left:0;">(no sections)</li>{% endif %}
 </ul>
