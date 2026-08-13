@@ -3,7 +3,11 @@ date: 2026-08-05
 summary: What it means to me.
 
 
+
+
 Many of you reading this, I'm sure, are familiar with Richard Stallman or other open source advocates. I am trying to avoid rehashing (or salting) their arguments or ideals.
+
+My Digital Sovereignty is my ability to exert complete and total control over my personal data. To own what I enjoy and not be a digital tenant on a media landlord's property. 
 
 My goal is simple: define why I care about being digitally sovereign, without diving into open source absolutism.
 
