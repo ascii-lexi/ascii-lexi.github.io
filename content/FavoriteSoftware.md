@@ -4,6 +4,11 @@ summary: It's FOSS!
 
 I will be updating this page as I try new software.
 
+
+## Self Hosting
+- **Audiobookshelf** - great for more than audiobooks. Host all my epubs and pdfs there, although I wont use the web client to view them.
+
+
 ## Editors
 - **Ghostwriter** - a WYSIWYG markdown editor that I have used to write every article for this blog! Has spellcheck which is something I find incredibly useful as a dyslexic.
 
@@ -17,13 +22,11 @@ I will be updating this page as I try new software.
 
 
 ## Media
-- **Tambourine** - aesthetically pleasing music player, but bare bones, now looking for software with playlist capability.
+- **Okular** - a pdf viewer with annotation and bookmarks. Very good for textbooks for quickly switching between different poistions for practice problems
 
 - **VLC** - Traffic Cone. Use it for watching DVDs/BluRays on Linux.
 
 -  **Blender & Godot** - 3D editing and game engine when I feel like making something interactive.
-
--  **Foliate** - Epub reader, no frills but less heavy than Calibre
 
 -  **❤️ LocalSend ❤️** - LAN file transfer that is perfect in every way. Solves a very common issue and has good enough UX for non-technical people to use it and easily identify why it is useful.
 
